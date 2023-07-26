@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { motion } from "framer-motion";
-import { Container, Typography, Button, Tabs, Tab } from "@mui/material";
+import { Container, Typography, Tabs, Tab } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export default function Home() {

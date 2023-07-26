@@ -1,5 +1,4 @@
 // fightersData.js
-import React from 'react';
 import Image1 from "../images/Marcelo_garcia.jpg";
 import Image2 from "../images/Rafael_mendes.jpg";
 import Image3 from "../images/Andre_galvao.jpg";
