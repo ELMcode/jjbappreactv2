@@ -2,7 +2,7 @@ import React from "react";
 import { SportsKabaddi } from "@material-ui/icons";
 import { Typography } from "@material-ui/core";
 import { Button, IconButton, Stack } from "@mui/material";
-import { Link, Route, Routes } from "react-router-dom";
+import {Link, Route, Routes, useLocation} from "react-router-dom";
 import Home from "../pages/Home";
 import News from "../pages/News";
 import Fighters from "../pages/Fighters";
@@ -19,6 +19,7 @@ const itemMenus = [
 ];
 
 export default function MenuTop() {
+    const location = useLocation();
     return (
         <>
             <IconButton
@@ -30,10 +31,13 @@ export default function MenuTop() {
                 to="/"
             >
                 <SportsKabaddi />
+                <Typography variant="h5" component="div" sx={{ fontFamily: 'SF Pro Display Black Italic' }}>
+                    BJJHub
+                </Typography>
+                <SportsKabaddi />
             </IconButton>
-            <Typography variant="h5" component="div" sx={{ marginLeft: '0px' }}>
-                BJJHub
-            </Typography>
+
+
             <Stack direction="row" spacing={4}>
                 {itemMenus.map((itemMenu) => (
                     <Button
@@ -41,6 +45,10 @@ export default function MenuTop() {
                         component={Link}
                         to={itemMenu.path}
                         color="primary"
+                        sx={{
+                            fontFamily: 'SF Pro Display Black Italic',
+                            color: location.pathname === itemMenu.path ? '#bd0808' : '#828286'
+                        }}
                     >
                         {itemMenu.label}
                     </Button>

@@ -7,23 +7,20 @@ import {
     Switch,
     ThemeProvider,
     Toolbar,
-    Typography,
 } from "@material-ui/core";
 import MenuTop, {LayoutMain} from "./MenuTop";
 import {BrowserRouter as Router} from "react-router-dom";
-import Belts from "../pages/Belts";
 
 const drawerWidth = 240;
 export default function Layout() {
     const themeDark = createTheme({
         typography: {
-            fontFamily: 'Roboto, sans-serif',
-            fontWeight:'bold'
+            fontFamily: "SF Pro Display Regular",
         },
         palette: {
             background: {
-                paper: '#002241',
-                default: '#3c4e62'
+                paper: '#000000',
+                default: '#121212'
             },
             text: {
                 primary: '#fff',
@@ -32,17 +29,20 @@ export default function Layout() {
     })
 
     const themeLight = createTheme({
+        typography: {
+            fontFamily: "SF Pro Display Regular",
+        },
         palette: {
             background: {
-                paper: '#ececec',
-                default: '#d8e8f6'
+                paper: '#FFFFFF',
+                default: '#F2F2F4'
             },
         }
     })
-    const [labelTheme, setLabelTheme] = useState('Theme sombre')
-    const [dark, setDark]= useState(true)
+    const [labelTheme, setLabelTheme] = useState('Light mode')
+    const [dark, setDark]= useState(false)
     const handleChange = () => {
-        labelTheme === "Theme sombre" ? setLabelTheme('Theme clair') : setLabelTheme('Theme sombre')
+        labelTheme === "Dark mode" ? setLabelTheme('Light mode') : setLabelTheme('Dark mode')
     }
 
     return (
